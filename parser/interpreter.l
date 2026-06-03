@@ -1,9 +1,8 @@
 /*! 
   \file interpreter.l
   \brief Lexical or scanner file
-  \author Alicia Muriel Fernández
-  \author Lucía Cañero Moslero
-  \date 2026-05-24
+  \author  Alicia Muriel Fernández
+  \date    2026-06-14
   \version 1.0
 */
 %{

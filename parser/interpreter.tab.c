@@ -67,7 +67,7 @@
 
 
 /* First part of user prologue.  */
-#line 11 "interpreter.y"
+#line 10 "interpreter.y"
 
 #include <iostream>
 #include <string>
@@ -703,15 +703,15 @@ static const yytype_int8 yytranslate[] =
 /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_int16 yyrline[] =
 {
-       0,   243,   243,   257,   261,   279,   286,   287,   291,   295,
-     299,   303,   307,   311,   315,   319,   323,   327,   331,   335,
-     339,   343,   347,   351,   355,   359,   363,   367,   371,   375,
-     379,   386,   392,   404,   413,   418,   425,   432,   439,   441,
-     448,   453,   458,   464,   469,   475,   481,   486,   492,   497,
-     503,   508,   513,   518,   523,   528,   533,   538,   543,   548,
-     553,   558,   563,   568,   573,   578,   583,   589,   636,   641,
-     646,   651,   656,   661,   666,   671,   676,   685,   689,   698,
-     702,   709,   715,   722,   727,   734,   739,   746
+       0,   242,   242,   256,   260,   278,   285,   286,   290,   294,
+     298,   302,   306,   310,   314,   318,   322,   326,   330,   334,
+     338,   342,   346,   350,   354,   358,   362,   366,   370,   374,
+     378,   385,   391,   403,   412,   417,   424,   431,   438,   440,
+     447,   452,   457,   463,   468,   474,   480,   485,   491,   496,
+     502,   507,   512,   517,   522,   527,   532,   537,   542,   547,
+     552,   557,   562,   567,   572,   577,   582,   588,   635,   640,
+     645,   650,   655,   660,   665,   670,   675,   684,   688,   697,
+     701,   708,   714,   721,   726,   733,   738,   745
 };
 #endif
 
@@ -1911,7 +1911,7 @@ yyreduce:
   switch (yyn)
     {
   case 2: /* program: stmtlist  */
-#line 244 "interpreter.y"
+#line 243 "interpreter.y"
                   { 
 		    // Create a new AST
 			(yyval.prog) = new lp::AST((yyvsp[0].stmts)); 
@@ -1926,7 +1926,7 @@ yyreduce:
     break;
 
   case 3: /* stmtlist: %empty  */
-#line 257 "interpreter.y"
+#line 256 "interpreter.y"
                   { 
 			(yyval.stmts) = new std::list<lp::Statement *>(); 
 		  }
@@ -1934,7 +1934,7 @@ yyreduce:
     break;
 
   case 4: /* stmtlist: stmtlist stmt  */
-#line 262 "interpreter.y"
+#line 261 "interpreter.y"
                   { 
 			(yyval.stmts) = (yyvsp[-1].stmts);
 			(yyval.stmts)->push_back((yyvsp[0].st));
@@ -1955,7 +1955,7 @@ yyreduce:
     break;
 
   case 5: /* stmtlist: stmtlist error  */
-#line 280 "interpreter.y"
+#line 279 "interpreter.y"
       { 
 			 (yyval.stmts) = (yyvsp[-1].stmts);
 			 yyclearin; 
@@ -1964,13 +1964,13 @@ yyreduce:
     break;
 
   case 6: /* stmt: SEMICOLON  */
-#line 286 "interpreter.y"
+#line 285 "interpreter.y"
                 { (yyval.st) = new lp::EmptyStmt(); }
 #line 1970 "interpreter.tab.c"
     break;
 
   case 7: /* stmt: asgn SEMICOLON  */
-#line 288 "interpreter.y"
+#line 287 "interpreter.y"
                 { 
 			(yyval.st) = (yyvsp[-1].st); 
 		}
@@ -1978,7 +1978,7 @@ yyreduce:
     break;
 
   case 8: /* stmt: print SEMICOLON  */
-#line 292 "interpreter.y"
+#line 291 "interpreter.y"
                 { 
 			(yyval.st) = (yyvsp[-1].st); 
 		}
@@ -1986,7 +1986,7 @@ yyreduce:
     break;
 
   case 9: /* stmt: read SEMICOLON  */
-#line 296 "interpreter.y"
+#line 295 "interpreter.y"
                 { 
 			(yyval.st) = (yyvsp[-1].st); 
 		}
@@ -1994,7 +1994,7 @@ yyreduce:
     break;
 
   case 10: /* stmt: read_string SEMICOLON  */
-#line 300 "interpreter.y"
+#line 299 "interpreter.y"
                 { 
 			(yyval.st) = (yyvsp[-1].st); 
 		}
@@ -2002,7 +2002,7 @@ yyreduce:
     break;
 
   case 11: /* stmt: clear_screen SEMICOLON  */
-#line 304 "interpreter.y"
+#line 303 "interpreter.y"
                 { 
 			(yyval.st) = (yyvsp[-1].st); 
 		}
@@ -2010,7 +2010,7 @@ yyreduce:
     break;
 
   case 12: /* stmt: place SEMICOLON  */
-#line 308 "interpreter.y"
+#line 307 "interpreter.y"
                 { 
 			(yyval.st) = (yyvsp[-1].st); 
 		}
@@ -2018,7 +2018,7 @@ yyreduce:
     break;
 
   case 13: /* stmt: if  */
-#line 312 "interpreter.y"
+#line 311 "interpreter.y"
                 { 
 			(yyval.st) = (yyvsp[0].st); 
 		}
@@ -2026,7 +2026,7 @@ yyreduce:
     break;
 
   case 14: /* stmt: while  */
-#line 316 "interpreter.y"
+#line 315 "interpreter.y"
                 { 
 			(yyval.st) = (yyvsp[0].st); 
 		}
@@ -2034,7 +2034,7 @@ yyreduce:
     break;
 
   case 15: /* stmt: for  */
-#line 320 "interpreter.y"
+#line 319 "interpreter.y"
                 { 
 			(yyval.st) = (yyvsp[0].st); 
 		}
@@ -2042,7 +2042,7 @@ yyreduce:
     break;
 
   case 16: /* stmt: repeat  */
-#line 324 "interpreter.y"
+#line 323 "interpreter.y"
                 { 
 			(yyval.st) = (yyvsp[0].st); 
 		}
@@ -2050,7 +2050,7 @@ yyreduce:
     break;
 
   case 17: /* stmt: block  */
-#line 328 "interpreter.y"
+#line 327 "interpreter.y"
                 { 
 			(yyval.st) = (yyvsp[0].st); 
 		}
@@ -2058,7 +2058,7 @@ yyreduce:
     break;
 
   case 18: /* stmt: switch  */
-#line 332 "interpreter.y"
+#line 331 "interpreter.y"
                 { 
 			(yyval.st) = (yyvsp[0].st); 
 		}
@@ -2066,7 +2066,7 @@ yyreduce:
     break;
 
   case 19: /* stmt: do_while  */
-#line 336 "interpreter.y"
+#line 335 "interpreter.y"
                 {
 			(yyval.st) = (yyvsp[0].st);
 		}
@@ -2074,7 +2074,7 @@ yyreduce:
     break;
 
   case 20: /* stmt: VARIABLE INC SEMICOLON  */
-#line 340 "interpreter.y"
+#line 339 "interpreter.y"
                 { 
 			(yyval.st) = new lp::AssignmentStmt((yyvsp[-2].string), new lp::PlusNode(new lp::VariableNode((yyvsp[-2].string)), new lp::NumberNode(1))); 
 		}
@@ -2082,7 +2082,7 @@ yyreduce:
     break;
 
   case 21: /* stmt: VARIABLE DEC SEMICOLON  */
-#line 344 "interpreter.y"
+#line 343 "interpreter.y"
                 { 
 			(yyval.st) = new lp::AssignmentStmt((yyvsp[-2].string), new lp::MinusNode(new lp::VariableNode((yyvsp[-2].string)), new lp::NumberNode(1))); 
 		}
@@ -2090,7 +2090,7 @@ yyreduce:
     break;
 
   case 22: /* stmt: VARIABLE PLUS_ASSIGN exp SEMICOLON  */
-#line 348 "interpreter.y"
+#line 347 "interpreter.y"
                 { 
 			(yyval.st) = new lp::AssignmentStmt((yyvsp[-3].string), new lp::PlusNode(new lp::VariableNode((yyvsp[-3].string)), (yyvsp[-1].expNode))); 
 		}
@@ -2098,7 +2098,7 @@ yyreduce:
     break;
 
   case 23: /* stmt: VARIABLE MINUS_ASSIGN exp SEMICOLON  */
-#line 352 "interpreter.y"
+#line 351 "interpreter.y"
                 { 
 			(yyval.st) = new lp::AssignmentStmt((yyvsp[-3].string), new lp::MinusNode(new lp::VariableNode((yyvsp[-3].string)), (yyvsp[-1].expNode))); 
 		}
@@ -2106,7 +2106,7 @@ yyreduce:
     break;
 
   case 24: /* stmt: VARIABLE MULT_ASSIGN exp SEMICOLON  */
-#line 356 "interpreter.y"
+#line 355 "interpreter.y"
                 {
 			(yyval.st) = new lp::AssignmentStmt((yyvsp[-3].string), new lp::MultiplicationNode(new lp::VariableNode((yyvsp[-3].string)), (yyvsp[-1].expNode))); 
 		}
@@ -2114,7 +2114,7 @@ yyreduce:
     break;
 
   case 25: /* stmt: VARIABLE DIV_ASSIGN exp SEMICOLON  */
-#line 360 "interpreter.y"
+#line 359 "interpreter.y"
                 {
 			(yyval.st) = new lp::AssignmentStmt((yyvsp[-3].string), new lp::DivisionNode(new lp::VariableNode((yyvsp[-3].string)), (yyvsp[-1].expNode))); 
 		}
@@ -2122,7 +2122,7 @@ yyreduce:
     break;
 
   case 26: /* stmt: RED_TEXT SEMICOLON  */
-#line 364 "interpreter.y"
+#line 363 "interpreter.y"
                 { 
 			(yyval.st) = new lp::ColorStmt("\033[31m"); 
 		}
@@ -2130,7 +2130,7 @@ yyreduce:
     break;
 
   case 27: /* stmt: GREEN_TEXT SEMICOLON  */
-#line 368 "interpreter.y"
+#line 367 "interpreter.y"
                 { 
 			(yyval.st) = new lp::ColorStmt("\033[32m"); 
 		}
@@ -2138,7 +2138,7 @@ yyreduce:
     break;
 
   case 28: /* stmt: BLUE_TEXT SEMICOLON  */
-#line 372 "interpreter.y"
+#line 371 "interpreter.y"
                 { 
 			(yyval.st) = new lp::ColorStmt("\033[34m"); 
 		}
@@ -2146,7 +2146,7 @@ yyreduce:
     break;
 
   case 29: /* stmt: YELLOW_TEXT SEMICOLON  */
-#line 376 "interpreter.y"
+#line 375 "interpreter.y"
                 { 
 			(yyval.st) = new lp::ColorStmt("\033[33m"); 
 		}
@@ -2154,7 +2154,7 @@ yyreduce:
     break;
 
   case 30: /* stmt: RESET_TEXT SEMICOLON  */
-#line 380 "interpreter.y"
+#line 379 "interpreter.y"
                 { 
 			(yyval.st) = new lp::ColorStmt("\033[0m"); 
 		}
@@ -2162,7 +2162,7 @@ yyreduce:
     break;
 
   case 31: /* if: IF controlSymbol cond THEN stmtlist END_IF  */
-#line 387 "interpreter.y"
+#line 386 "interpreter.y"
          { 
            lp::BlockStmt *aux_1 = new lp::BlockStmt((yyvsp[-1].stmts));
            (yyval.st) = new lp::IfStmt((yyvsp[-3].expNode), aux_1); 
@@ -2172,7 +2172,7 @@ yyreduce:
     break;
 
   case 32: /* if: IF controlSymbol cond THEN stmtlist ELSE stmtlist END_IF  */
-#line 393 "interpreter.y"
+#line 392 "interpreter.y"
          { 
            lp::BlockStmt *aux_1 = new lp::BlockStmt((yyvsp[-3].stmts));
            lp::BlockStmt *aux_2 = new lp::BlockStmt((yyvsp[-1].stmts));
@@ -2185,7 +2185,7 @@ yyreduce:
     break;
 
   case 33: /* while: WHILE controlSymbol cond DO stmtlist END_WHILE  */
-#line 405 "interpreter.y"
+#line 404 "interpreter.y"
             { 
               lp::BlockStmt *aux_1 = new lp::BlockStmt((yyvsp[-1].stmts));
               (yyval.st) = new lp::WhileStmt((yyvsp[-3].expNode), aux_1); 
@@ -2195,7 +2195,7 @@ yyreduce:
     break;
 
   case 34: /* for: FOR controlSymbol VARIABLE FROM exp TO exp DO stmtlist END_FOR  */
-#line 414 "interpreter.y"
+#line 413 "interpreter.y"
           { 
             (yyval.st) = new lp::ForStmt((yyvsp[-7].string), (yyvsp[-5].expNode), (yyvsp[-3].expNode), new lp::NumberNode(1), (yyvsp[-1].stmts)); 
             control--;
@@ -2204,7 +2204,7 @@ yyreduce:
     break;
 
   case 35: /* for: FOR controlSymbol VARIABLE FROM exp TO exp STEP exp DO stmtlist END_FOR  */
-#line 419 "interpreter.y"
+#line 418 "interpreter.y"
           { 
             (yyval.st) = new lp::ForStmt((yyvsp[-9].string), (yyvsp[-7].expNode), (yyvsp[-5].expNode), (yyvsp[-3].expNode), (yyvsp[-1].stmts)); 
             control--;
@@ -2213,7 +2213,7 @@ yyreduce:
     break;
 
   case 36: /* repeat: REPEAT controlSymbol stmtlist UNTIL cond  */
-#line 426 "interpreter.y"
+#line 425 "interpreter.y"
     {
         (yyval.st) = new lp::RepeatStmt((yyvsp[-2].stmts), (yyvsp[0].expNode));
         control--;
@@ -2222,7 +2222,7 @@ yyreduce:
     break;
 
   case 37: /* do_while: DO controlSymbol block WHILE cond SEMICOLON  */
-#line 433 "interpreter.y"
+#line 432 "interpreter.y"
           {
               (yyval.st) = new lp::DoWhileStmt((yyvsp[-3].st), (yyvsp[-1].expNode));
               control--;
@@ -2231,13 +2231,13 @@ yyreduce:
     break;
 
   case 38: /* cond: LPAREN exp RPAREN  */
-#line 439 "interpreter.y"
+#line 438 "interpreter.y"
                         { (yyval.expNode) = (yyvsp[-1].expNode); }
 #line 2237 "interpreter.tab.c"
     break;
 
   case 39: /* block: LETFCURLYBRACKET stmtlist RIGHTCURLYBRACKET  */
-#line 442 "interpreter.y"
+#line 441 "interpreter.y"
                 {
 			(yyval.st) = new lp::BlockStmt((yyvsp[-1].stmts)); 
 		}
@@ -2245,7 +2245,7 @@ yyreduce:
     break;
 
   case 40: /* controlSymbol: %empty  */
-#line 448 "interpreter.y"
+#line 447 "interpreter.y"
                 {
 			control++;
 		}
@@ -2253,7 +2253,7 @@ yyreduce:
     break;
 
   case 41: /* asgn: VARIABLE ASSIGNMENT exp  */
-#line 454 "interpreter.y"
+#line 453 "interpreter.y"
                 { 
 			(yyval.st) = new lp::AssignmentStmt((yyvsp[-2].string), (yyvsp[0].expNode));
 		}
@@ -2261,7 +2261,7 @@ yyreduce:
     break;
 
   case 42: /* asgn: VARIABLE ASSIGNMENT asgn  */
-#line 459 "interpreter.y"
+#line 458 "interpreter.y"
                 { 
 			
 			(yyval.st) = new lp::AssignmentStmt((yyvsp[-2].string), (lp::AssignmentStmt *) (yyvsp[0].st));
@@ -2270,7 +2270,7 @@ yyreduce:
     break;
 
   case 43: /* asgn: CONSTANT ASSIGNMENT exp  */
-#line 465 "interpreter.y"
+#line 464 "interpreter.y"
                 {   
  			execerror("Semantic error in assignment: it is not allowed to modify a constant ", (yyvsp[-2].string));
 		}
@@ -2278,7 +2278,7 @@ yyreduce:
     break;
 
   case 44: /* asgn: CONSTANT ASSIGNMENT asgn  */
-#line 470 "interpreter.y"
+#line 469 "interpreter.y"
                 {   
  			execerror("Semantic error in multiple assignment: it is not allowed to modify a constant ",(yyvsp[-2].string));
 		}
@@ -2286,7 +2286,7 @@ yyreduce:
     break;
 
   case 45: /* print: PRINT exp  */
-#line 476 "interpreter.y"
+#line 475 "interpreter.y"
                 {
 			 (yyval.st) = new lp::PrintStmt((yyvsp[0].expNode));
 		}
@@ -2294,7 +2294,7 @@ yyreduce:
     break;
 
   case 46: /* read: READ LPAREN VARIABLE RPAREN  */
-#line 482 "interpreter.y"
+#line 481 "interpreter.y"
                 {
 			 (yyval.st) = new lp::ReadStmt((yyvsp[-1].string));
 		}
@@ -2302,7 +2302,7 @@ yyreduce:
     break;
 
   case 47: /* read: READ LPAREN CONSTANT RPAREN  */
-#line 487 "interpreter.y"
+#line 486 "interpreter.y"
                 {   
  			execerror("Semantic error in \"read statement\": it is not allowed to modify a constant ",(yyvsp[-1].string));
 		}
@@ -2310,7 +2310,7 @@ yyreduce:
     break;
 
   case 48: /* read_string: READ_STRING LPAREN VARIABLE RPAREN  */
-#line 493 "interpreter.y"
+#line 492 "interpreter.y"
     {
         (yyval.st) = new lp::ReadStringStmt((yyvsp[-1].string));
     }
@@ -2318,7 +2318,7 @@ yyreduce:
     break;
 
   case 49: /* read_string: READ_STRING LPAREN CONSTANT RPAREN  */
-#line 498 "interpreter.y"
+#line 497 "interpreter.y"
                 {
 			execerror("Semantic error in \"read statement\": it is not allowed to modify a constant ",(yyvsp[-1].string));
 		}
@@ -2326,7 +2326,7 @@ yyreduce:
     break;
 
   case 50: /* exp: NUMBER  */
-#line 504 "interpreter.y"
+#line 503 "interpreter.y"
                 { 
 			(yyval.expNode) = new lp::NumberNode((yyvsp[0].number));
 		}
@@ -2334,7 +2334,7 @@ yyreduce:
     break;
 
   case 51: /* exp: STRING  */
-#line 509 "interpreter.y"
+#line 508 "interpreter.y"
                 {
 		(yyval.expNode) = new lp::StringNode((yyvsp[0].string));
 		}
@@ -2342,7 +2342,7 @@ yyreduce:
     break;
 
   case 52: /* exp: exp FACT  */
-#line 514 "interpreter.y"
+#line 513 "interpreter.y"
                 {
 			(yyval.expNode) = new lp::FactorialNode((yyvsp[-1].expNode));
 		}
@@ -2350,7 +2350,7 @@ yyreduce:
     break;
 
   case 53: /* exp: exp QUESTION exp COMMA exp  */
-#line 519 "interpreter.y"
+#line 518 "interpreter.y"
                 {
 			(yyval.expNode) = new lp::TernaryNode((yyvsp[-4].expNode), (yyvsp[-2].expNode), (yyvsp[0].expNode));
 		}
@@ -2358,7 +2358,7 @@ yyreduce:
     break;
 
   case 54: /* exp: exp PLUS exp  */
-#line 524 "interpreter.y"
+#line 523 "interpreter.y"
                 { 
 			 (yyval.expNode) = new lp::PlusNode((yyvsp[-2].expNode), (yyvsp[0].expNode));
 		 }
@@ -2366,7 +2366,7 @@ yyreduce:
     break;
 
   case 55: /* exp: exp MINUS exp  */
-#line 529 "interpreter.y"
+#line 528 "interpreter.y"
         {
 			(yyval.expNode) = new lp::MinusNode((yyvsp[-2].expNode), (yyvsp[0].expNode));
 		}
@@ -2374,7 +2374,7 @@ yyreduce:
     break;
 
   case 56: /* exp: exp MULTIPLICATION exp  */
-#line 534 "interpreter.y"
+#line 533 "interpreter.y"
                 { 
 			(yyval.expNode) = new lp::MultiplicationNode((yyvsp[-2].expNode), (yyvsp[0].expNode));
 		}
@@ -2382,7 +2382,7 @@ yyreduce:
     break;
 
   case 57: /* exp: exp DIVISION exp  */
-#line 539 "interpreter.y"
+#line 538 "interpreter.y"
                 {
 		  (yyval.expNode) = new lp::DivisionNode((yyvsp[-2].expNode), (yyvsp[0].expNode));
 	   }
@@ -2390,7 +2390,7 @@ yyreduce:
     break;
 
   case 58: /* exp: exp INTEGER_DIVISION exp  */
-#line 544 "interpreter.y"
+#line 543 "interpreter.y"
         {
 			(yyval.expNode) = new lp::IntegerDivisionNode((yyvsp[-2].expNode), (yyvsp[0].expNode));
 		}
@@ -2398,7 +2398,7 @@ yyreduce:
     break;
 
   case 59: /* exp: exp CONCATENATION exp  */
-#line 549 "interpreter.y"
+#line 548 "interpreter.y"
         {
           (yyval.expNode) = new lp::ConcatenationNode((yyvsp[-2].expNode), (yyvsp[0].expNode));
         }
@@ -2406,7 +2406,7 @@ yyreduce:
     break;
 
   case 60: /* exp: LPAREN exp RPAREN  */
-#line 554 "interpreter.y"
+#line 553 "interpreter.y"
         { 
 			(yyval.expNode) = (yyvsp[-1].expNode);
 		 }
@@ -2414,7 +2414,7 @@ yyreduce:
     break;
 
   case 61: /* exp: PLUS exp  */
-#line 559 "interpreter.y"
+#line 558 "interpreter.y"
                 { 
   		  (yyval.expNode) = new lp::UnaryPlusNode((yyvsp[0].expNode));
 		}
@@ -2422,7 +2422,7 @@ yyreduce:
     break;
 
   case 62: /* exp: MINUS exp  */
-#line 564 "interpreter.y"
+#line 563 "interpreter.y"
                 { 
   		  (yyval.expNode) = new lp::UnaryMinusNode((yyvsp[0].expNode));
 		}
@@ -2430,7 +2430,7 @@ yyreduce:
     break;
 
   case 63: /* exp: exp MODULO exp  */
-#line 569 "interpreter.y"
+#line 568 "interpreter.y"
                 {
 		  (yyval.expNode) = new lp::ModuloNode((yyvsp[-2].expNode), (yyvsp[0].expNode));
        }
@@ -2438,7 +2438,7 @@ yyreduce:
     break;
 
   case 64: /* exp: exp POWER exp  */
-#line 574 "interpreter.y"
+#line 573 "interpreter.y"
         { 
   		  (yyval.expNode) = new lp::PowerNode((yyvsp[-2].expNode), (yyvsp[0].expNode));
 		}
@@ -2446,7 +2446,7 @@ yyreduce:
     break;
 
   case 65: /* exp: VARIABLE  */
-#line 579 "interpreter.y"
+#line 578 "interpreter.y"
                 {
 		  (yyval.expNode) = new lp::VariableNode((yyvsp[0].string));
 		}
@@ -2454,7 +2454,7 @@ yyreduce:
     break;
 
   case 66: /* exp: CONSTANT  */
-#line 584 "interpreter.y"
+#line 583 "interpreter.y"
                 {
 		  (yyval.expNode) = new lp::ConstantNode((yyvsp[0].string));
 
@@ -2463,7 +2463,7 @@ yyreduce:
     break;
 
   case 67: /* exp: BUILTIN LPAREN listOfExp RPAREN  */
-#line 590 "interpreter.y"
+#line 589 "interpreter.y"
                 {
 			// Get the identifier in the table of symbols as Builtin
 			lp::Builtin *f= (lp::Builtin *) table.getSymbol((yyvsp[-3].string));
@@ -2513,7 +2513,7 @@ yyreduce:
     break;
 
   case 68: /* exp: exp GREATER_THAN exp  */
-#line 637 "interpreter.y"
+#line 636 "interpreter.y"
                 {
  			(yyval.expNode) = new lp::GreaterThanNode((yyvsp[-2].expNode),(yyvsp[0].expNode));
 		}
@@ -2521,7 +2521,7 @@ yyreduce:
     break;
 
   case 69: /* exp: exp GREATER_OR_EQUAL exp  */
-#line 642 "interpreter.y"
+#line 641 "interpreter.y"
                 {
  			(yyval.expNode) = new lp::GreaterOrEqualNode((yyvsp[-2].expNode),(yyvsp[0].expNode));
 		}
@@ -2529,7 +2529,7 @@ yyreduce:
     break;
 
   case 70: /* exp: exp LESS_THAN exp  */
-#line 647 "interpreter.y"
+#line 646 "interpreter.y"
                 {
  			(yyval.expNode) = new lp::LessThanNode((yyvsp[-2].expNode),(yyvsp[0].expNode));
 		}
@@ -2537,7 +2537,7 @@ yyreduce:
     break;
 
   case 71: /* exp: exp LESS_OR_EQUAL exp  */
-#line 652 "interpreter.y"
+#line 651 "interpreter.y"
                 {
  			(yyval.expNode) = new lp::LessOrEqualNode((yyvsp[-2].expNode),(yyvsp[0].expNode));
 		}
@@ -2545,7 +2545,7 @@ yyreduce:
     break;
 
   case 72: /* exp: exp EQUAL exp  */
-#line 657 "interpreter.y"
+#line 656 "interpreter.y"
                 {
  			(yyval.expNode) = new lp::EqualNode((yyvsp[-2].expNode),(yyvsp[0].expNode));
 		}
@@ -2553,7 +2553,7 @@ yyreduce:
     break;
 
   case 73: /* exp: exp NOT_EQUAL exp  */
-#line 662 "interpreter.y"
+#line 661 "interpreter.y"
                 {
  			(yyval.expNode) = new lp::NotEqualNode((yyvsp[-2].expNode),(yyvsp[0].expNode));
 		}
@@ -2561,7 +2561,7 @@ yyreduce:
     break;
 
   case 74: /* exp: exp AND exp  */
-#line 667 "interpreter.y"
+#line 666 "interpreter.y"
                 {
  			(yyval.expNode) = new lp::AndNode((yyvsp[-2].expNode),(yyvsp[0].expNode));
 		}
@@ -2569,7 +2569,7 @@ yyreduce:
     break;
 
   case 75: /* exp: exp OR exp  */
-#line 672 "interpreter.y"
+#line 671 "interpreter.y"
                 {
  			(yyval.expNode) = new lp::OrNode((yyvsp[-2].expNode),(yyvsp[0].expNode));
 		}
@@ -2577,7 +2577,7 @@ yyreduce:
     break;
 
   case 76: /* exp: NOT exp  */
-#line 677 "interpreter.y"
+#line 676 "interpreter.y"
                 {
  			(yyval.expNode) = new lp::NotNode((yyvsp[0].expNode));
 		}
@@ -2585,7 +2585,7 @@ yyreduce:
     break;
 
   case 77: /* listOfExp: %empty  */
-#line 685 "interpreter.y"
+#line 684 "interpreter.y"
                         {
 				(yyval.parameters) = new std::list<lp::ExpNode *>(); 
 			}
@@ -2593,7 +2593,7 @@ yyreduce:
     break;
 
   case 78: /* listOfExp: exp restOfListOfExp  */
-#line 690 "interpreter.y"
+#line 689 "interpreter.y"
                         {
 				(yyval.parameters) = (yyvsp[0].parameters);
 				(yyval.parameters)->push_front((yyvsp[-1].expNode));
@@ -2602,7 +2602,7 @@ yyreduce:
     break;
 
   case 79: /* restOfListOfExp: %empty  */
-#line 698 "interpreter.y"
+#line 697 "interpreter.y"
                         {
 				(yyval.parameters) = new std::list<lp::ExpNode *>(); 
 			}
@@ -2610,7 +2610,7 @@ yyreduce:
     break;
 
   case 80: /* restOfListOfExp: COMMA exp restOfListOfExp  */
-#line 703 "interpreter.y"
+#line 702 "interpreter.y"
                         {
 				(yyval.parameters) = (yyvsp[0].parameters);
 				(yyval.parameters)->push_front((yyvsp[-1].expNode));
@@ -2619,7 +2619,7 @@ yyreduce:
     break;
 
   case 81: /* clear_screen: CLEAR_SCREEN_CMD  */
-#line 710 "interpreter.y"
+#line 709 "interpreter.y"
     { 
         (yyval.st) = new lp::ClearScreenStmt(); 
     }
@@ -2627,7 +2627,7 @@ yyreduce:
     break;
 
   case 82: /* place: PLACE_CMD LPAREN exp COMMA exp RPAREN  */
-#line 716 "interpreter.y"
+#line 715 "interpreter.y"
     { 
         (yyval.st) = new lp::PlaceStmt((yyvsp[-3].expNode), (yyvsp[-1].expNode)); 
     }
@@ -2635,7 +2635,7 @@ yyreduce:
     break;
 
   case 83: /* switch: SWITCH controlSymbol cond case_list END_SWITCH  */
-#line 723 "interpreter.y"
+#line 722 "interpreter.y"
              {
                (yyval.st) = new lp::SwitchStmt((yyvsp[-2].expNode), (yyvsp[-1].cases), NULL);
                control--;
@@ -2644,7 +2644,7 @@ yyreduce:
     break;
 
   case 84: /* switch: SWITCH controlSymbol cond case_list DEFAULT ':' stmtlist END_SWITCH  */
-#line 728 "interpreter.y"
+#line 727 "interpreter.y"
              {
                (yyval.st) = new lp::SwitchStmt((yyvsp[-5].expNode), (yyvsp[-4].cases), new lp::BlockStmt((yyvsp[-1].stmts)));
                control--;
@@ -2653,7 +2653,7 @@ yyreduce:
     break;
 
   case 85: /* case_list: case  */
-#line 735 "interpreter.y"
+#line 734 "interpreter.y"
            { 
              (yyval.cases) = new std::list<lp::CaseStmt *>(); 
              (yyval.cases)->push_back((yyvsp[0].casestmt)); 
@@ -2662,7 +2662,7 @@ yyreduce:
     break;
 
   case 86: /* case_list: case_list case  */
-#line 740 "interpreter.y"
+#line 739 "interpreter.y"
            { 
              (yyval.cases) = (yyvsp[-1].cases); 
              (yyval.cases)->push_back((yyvsp[0].casestmt)); 
@@ -2671,7 +2671,7 @@ yyreduce:
     break;
 
   case 87: /* case: CASE exp ':' stmtlist  */
-#line 747 "interpreter.y"
+#line 746 "interpreter.y"
            { 
              (yyval.casestmt) = new lp::CaseStmt((yyvsp[-2].expNode), new lp::BlockStmt((yyvsp[0].stmts))); 
            }
@@ -2903,7 +2903,7 @@ yyreturnlab:
   return yyresult;
 }
 
-#line 751 "interpreter.y"
+#line 750 "interpreter.y"
 
 // %precedence ELSE
 

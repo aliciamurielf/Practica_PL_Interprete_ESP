@@ -2,8 +2,7 @@
 	\file   init.hpp
 	\brief   Prototype of the function for the initialization of table of symbols
 	\author  Alicia Muriel Fernández
-	\author  Lucía Cañero Moslero
-	\date    2026-05-24
+	\date    2026-06-14
 	\version 1.0
 */
 
@@ -56,8 +55,8 @@ static struct {
           std::string name ;
 	      bool value;
 	      } logicalConstant[] = { 
-	                    {"true", true},
-	                    {"false", false},
+	                    {"verdadero", true},
+	                    {"falso", false},
 	                    {"",      0}
 	                   };
 
@@ -69,38 +68,37 @@ static struct {
           std::string name ;
 	      int token;
 	      } keyword[] = { 
-	                    {"if", IF},
-                		{"then", THEN},
-                		{"else", ELSE},
-                		{"end_if", END_IF},
-                		{"while", WHILE},
-                		{"do", DO},
-                		{"end_while", END_WHILE},
-                		{"for", FOR},
-                		{"from", FROM},
-                		{"to", TO},
-                		{"step", STEP},
-                		{"end_for", END_FOR},
-                		{"repeat", REPEAT},
-                		{"until", UNTIL},
+	                    {"si", IF},
+                		{"entonces", THEN},
+                		{"si_no", ELSE},
+                		{"fin_si", END_IF},
+                		{"mientras", WHILE},
+                		{"hacer", DO},
+                		{"fin_mientras", END_WHILE},
+                		{"para", FOR},
+                		{"desde", FROM},
+                		{"hasta", TO},
+                		{"paso", STEP},
+                		{"fin_para", END_FOR},
+                		{"repetir", REPEAT},
 						{"mod", MODULO},
-						{"and", AND},
-						{"or", OR},
-						{"not", NOT},
-                		{"read", READ},
-                		{"print", PRINT},
-                		{"read_string", READ_STRING},      
-                		{"clear_screen", CLEAR_SCREEN_CMD}, 
-                		{"place", PLACE_CMD},  
-						{"switch", SWITCH},
-                		{"case", CASE},
-                		{"default", DEFAULT},
-                		{"end_switch", END_SWITCH},
-						{ "red_text", RED_TEXT },
-						{ "green_text", GREEN_TEXT },
-						{ "blue_text", BLUE_TEXT },
-						{ "yellow_text", YELLOW_TEXT },
-						{ "reset_text", RESET_TEXT },
+						{"y", AND},
+						{"o", OR},
+						{"no", NOT},
+                		{"leer", READ},
+                		{"escribir", PRINT},
+                		{"leer_cadena", READ_STRING},      
+                		{"borrar_pantalla", CLEAR_SCREEN_CMD}, 
+                		{"lugar", PLACE_CMD},  
+						{"selector", SWITCH},
+                		{"caso", CASE},
+                		{"defecto", DEFAULT},
+                		{"fin_selector", END_SWITCH},
+						{"red_text", RED_TEXT},
+						{"green_text", GREEN_TEXT},
+						{"blue_text", BLUE_TEXT},
+						{"yellow_text", YELLOW_TEXT},
+						{"reset_text", RESET_TEXT},
 						{"factorial", FACTORIAL_KW},
                 		{"", 0} 
 	                   };
@@ -112,15 +110,15 @@ static struct {    /* Predefined functions names */
                 std::string name ;
 				lp::TypePointerDoubleFunction_1 function;
               } function_1 [] = {
-	                   {"sin",     sin},
-		               {"cos",     cos},
+	                   {"seno",     sin},
+		               {"coseno",  cos},
 		               {"atan",    atan},
 		               {"log",     Log},
 		               {"log10",   Log10},
 		               {"exp",     Exp},
-		               {"sqrt",    Sqrt},
-		               {"integer", integer},
-		               {"abs",     fabs},  
+		               {"raiz",    Sqrt},
+		               {"parte_entera", integer},
+		               {"abs",     fabs},
 		               {"",       0}
 		              };
 

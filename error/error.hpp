@@ -2,8 +2,7 @@
 	\file error.hpp
   	\brief Prototypes of error recovery functions 
 	\author  Alicia Muriel Fernández
-	\author  Lucía Cañero Moslero
-	\date    2026-05-24
+	\date    2026-06-14
 	\version 1.0
 */
 

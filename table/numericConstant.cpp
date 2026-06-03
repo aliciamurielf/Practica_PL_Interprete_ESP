@@ -2,8 +2,7 @@
 	\file    numericConstant.cpp
 	\brief   Code of some functions of NumericConstant class
 	\author  Alicia Muriel Fernández
-	\author  Lucía Cañero Moslero
-	\date    2026-05-24
+	\date    2026-06-14
 	\version 1.0
 */
 

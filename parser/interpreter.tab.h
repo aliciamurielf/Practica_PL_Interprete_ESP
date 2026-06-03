@@ -133,7 +133,7 @@ extern int yydebug;
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 union YYSTYPE
 {
-#line 144 "interpreter.y"
+#line 143 "interpreter.y"
 
   double number;
   char * string; 				 /* NEW in example 7 */

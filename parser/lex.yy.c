@@ -561,12 +561,11 @@ char *yytext;
 /*! 
   \file interpreter.l
   \brief Lexical or scanner file
-  \author Alicia Muriel Fernández
-  \author Lucía Cañero Moslero
-  \date 2026-05-24
+  \author  Alicia Muriel Fernández
+  \date    2026-06-14
   \version 1.0
 */
-#line 10 "interpreter.l"
+#line 9 "interpreter.l"
 #include <iostream>
 
 /*********************/
@@ -608,9 +607,9 @@ extern int lineNumber; //!< External line counter
 #include <string.h>
 
 
-#line 611 "lex.yy.c"
+#line 610 "lex.yy.c"
 
-#line 613 "lex.yy.c"
+#line 612 "lex.yy.c"
 
 #define INITIAL 0
 #define ERROR 1
@@ -829,10 +828,10 @@ YY_DECL
 		}
 
 	{
-#line 73 "interpreter.l"
+#line 72 "interpreter.l"
 
 
-#line 835 "lex.yy.c"
+#line 834 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -897,34 +896,34 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 75 "interpreter.l"
+#line 74 "interpreter.l"
 { ; }   
 	YY_BREAK
 case 2:
 /* rule 2 can match eol */
 YY_RULE_SETUP
-#line 77 "interpreter.l"
+#line 76 "interpreter.l"
 { 
            	lineNumber++; 
         }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 81 "interpreter.l"
+#line 80 "interpreter.l"
 {
 			return SEMICOLON;
 		}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 85 "interpreter.l"
+#line 84 "interpreter.l"
 {
 			return COMMA;
 		}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 89 "interpreter.l"
+#line 88 "interpreter.l"
 {
 			/* PARA LOS CASOS DEL SWITCH */
 			return ':';
@@ -932,187 +931,187 @@ YY_RULE_SETUP
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 93 "interpreter.l"
+#line 92 "interpreter.l"
 { return MINUS;  } 			
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 94 "interpreter.l"
+#line 93 "interpreter.l"
 { return PLUS;   } 			
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 96 "interpreter.l"
+#line 95 "interpreter.l"
 { return MULTIPLICATION; } 	
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 97 "interpreter.l"
+#line 96 "interpreter.l"
 { return DIVISION; } 		
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 99 "interpreter.l"
+#line 98 "interpreter.l"
 { return LPAREN; } 			
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 100 "interpreter.l"
+#line 99 "interpreter.l"
 { return RPAREN; } 			
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 102 "interpreter.l"
+#line 101 "interpreter.l"
 { return MODULO; }			
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 104 "interpreter.l"
+#line 103 "interpreter.l"
 { return POWER; }		
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 106 "interpreter.l"
+#line 105 "interpreter.l"
 { return ASSIGNMENT; }		
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 108 "interpreter.l"
+#line 107 "interpreter.l"
 { return EQUAL; }			
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 110 "interpreter.l"
+#line 109 "interpreter.l"
 { return NOT_EQUAL; }		
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 112 "interpreter.l"
+#line 111 "interpreter.l"
 { return GREATER_OR_EQUAL; } 
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 114 "interpreter.l"
+#line 113 "interpreter.l"
 { return LESS_OR_EQUAL; }	
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 116 "interpreter.l"
+#line 115 "interpreter.l"
 { return GREATER_THAN; }	
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 117 "interpreter.l"
+#line 116 "interpreter.l"
 { return LESS_THAN; }		
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 119 "interpreter.l"
+#line 118 "interpreter.l"
 { return CONCATENATION; }				
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 121 "interpreter.l"
+#line 120 "interpreter.l"
 { return LETFCURLYBRACKET; } 	
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 123 "interpreter.l"
+#line 122 "interpreter.l"
 { return RIGHTCURLYBRACKET; }	
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 125 "interpreter.l"
+#line 124 "interpreter.l"
 { return INTEGER_DIVISION; }  
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 127 "interpreter.l"
+#line 126 "interpreter.l"
 { return INC; }
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 129 "interpreter.l"
+#line 128 "interpreter.l"
 { return DEC; }
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 131 "interpreter.l"
+#line 130 "interpreter.l"
 { return FACT; }
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 133 "interpreter.l"
+#line 132 "interpreter.l"
 { return PLUS_ASSIGN; }
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 135 "interpreter.l"
+#line 134 "interpreter.l"
 { return MINUS_ASSIGN; }
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 137 "interpreter.l"
+#line 136 "interpreter.l"
 { return MULT_ASSIGN; }
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 139 "interpreter.l"
+#line 138 "interpreter.l"
 { return DIV_ASSIGN; }
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 141 "interpreter.l"
+#line 140 "interpreter.l"
 { return MOD_ASSIGN; }
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 143 "interpreter.l"
+#line 142 "interpreter.l"
 { return QUESTION; }
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 144 "interpreter.l"
+#line 143 "interpreter.l"
 { return RED_TEXT; }
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 145 "interpreter.l"
+#line 144 "interpreter.l"
 { return GREEN_TEXT; }
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 146 "interpreter.l"
+#line 145 "interpreter.l"
 { return BLUE_TEXT; }
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 147 "interpreter.l"
+#line 146 "interpreter.l"
 { return YELLOW_TEXT; }
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 148 "interpreter.l"
+#line 147 "interpreter.l"
 { return RESET_TEXT; }
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 150 "interpreter.l"
+#line 149 "interpreter.l"
 { warning("Lexical error: Numero mal formado (demasiados puntos)", yytext); }
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
-#line 152 "interpreter.l"
+#line 151 "interpreter.l"
 { warning("Lexical error: Un identificador no puede terminar en guion bajo", yytext); }
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
-#line 154 "interpreter.l"
+#line 153 "interpreter.l"
 { warning("Lexical error: Un identificador no puede tener dos guiones bajos seguidos", yytext); }
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
-#line 156 "interpreter.l"
+#line 155 "interpreter.l"
 { 
 						yylval.number = atof(yytext); 
 						return NUMBER; 
@@ -1120,7 +1119,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 43:
 YY_RULE_SETUP
-#line 161 "interpreter.l"
+#line 160 "interpreter.l"
 {
 						 std::string identifier(yytext);
 
@@ -1145,7 +1144,7 @@ YY_RULE_SETUP
 case 44:
 /* rule 44 can match eol */
 YY_RULE_SETUP
-#line 182 "interpreter.l"
+#line 181 "interpreter.l"
 {
 						yytext[yyleng-1] = '\0';
 						yytext++;
@@ -1156,28 +1155,28 @@ YY_RULE_SETUP
 	YY_BREAK
 case 45:
 YY_RULE_SETUP
-#line 190 "interpreter.l"
+#line 189 "interpreter.l"
 { BEGIN(COMENTARIO_BLOQUE); } 
 	YY_BREAK
 case 46:
 YY_RULE_SETUP
-#line 191 "interpreter.l"
+#line 190 "interpreter.l"
 { BEGIN(INITIAL); }
 	YY_BREAK
 case 47:
 /* rule 47 can match eol */
 YY_RULE_SETUP
-#line 192 "interpreter.l"
+#line 191 "interpreter.l"
 { lineNumber++; }   
 	YY_BREAK
 case 48:
 YY_RULE_SETUP
-#line 193 "interpreter.l"
+#line 192 "interpreter.l"
 { /* Ignoramos cualquier otro carácter */ }
 	YY_BREAK
 case 49:
 YY_RULE_SETUP
-#line 195 "interpreter.l"
+#line 194 "interpreter.l"
 { 
                     /* Comentario de una linea: no hacemos nada, lo ignoramos */ 
       }
@@ -1185,7 +1184,7 @@ YY_RULE_SETUP
 case YY_STATE_EOF(INITIAL):
 case YY_STATE_EOF(ERROR):
 case YY_STATE_EOF(COMENTARIO_BLOQUE):
-#line 200 "interpreter.l"
+#line 199 "interpreter.l"
 { /* The interpreter finishes when finds the end of file character */
 		/*  PLACE(24,10);
 	  	  std::cout <<  BICYAN;
@@ -1199,7 +1198,7 @@ case YY_STATE_EOF(COMENTARIO_BLOQUE):
 	YY_BREAK
 case 50:
 YY_RULE_SETUP
-#line 212 "interpreter.l"
+#line 211 "interpreter.l"
 { 	
 									BEGIN(ERROR); 
 									yymore();  
@@ -1207,7 +1206,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 51:
 YY_RULE_SETUP
-#line 217 "interpreter.l"
+#line 216 "interpreter.l"
 { 
 									yymore(); 
 								}
@@ -1215,7 +1214,7 @@ YY_RULE_SETUP
 case 52:
 /* rule 52 can match eol */
 YY_RULE_SETUP
-#line 221 "interpreter.l"
+#line 220 "interpreter.l"
 { 
 								yyless(yyleng-1); 
 								warning("Lexical error", yytext);
@@ -1224,10 +1223,10 @@ YY_RULE_SETUP
 	YY_BREAK
 case 53:
 YY_RULE_SETUP
-#line 226 "interpreter.l"
+#line 225 "interpreter.l"
 ECHO;
 	YY_BREAK
-#line 1230 "lex.yy.c"
+#line 1229 "lex.yy.c"
 
 	case YY_END_OF_BUFFER:
 		{
@@ -2230,7 +2229,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 226 "interpreter.l"
+#line 225 "interpreter.l"
 
 
 
