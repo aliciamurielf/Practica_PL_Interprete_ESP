@@ -514,7 +514,7 @@ exp:	NUMBER
 			$$ = new lp::FactorialNode($1);
 		}
 
-	| exp QUESTION exp COMMA exp
+	| exp QUESTION exp ':' exp
 		{
 			$$ = new lp::TernaryNode($1, $3, $5);
 		}

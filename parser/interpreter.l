@@ -131,13 +131,15 @@ ERROR_ID_DOBLE {LETTER}({LETTER}|{DIGIT}|_)*__({LETTER}|{DIGIT}|_)*
 
 "+="    { return PLUS_ASSIGN; }
 
-"-="    { return MINUS_ASSIGN; }
+"+:="   { return PLUS_ASSIGN; }
 
-"*="    { return MULT_ASSIGN; }
+"-:="   { return MINUS_ASSIGN; }
 
-"/="    { return DIV_ASSIGN; }
+"*:="   { return MULT_ASSIGN; }
 
-"%="    { return MOD_ASSIGN; }
+"/:="   { return DIV_ASSIGN; }
+
+"%:="   { return MOD_ASSIGN; }
 
 "?"     { return QUESTION; }
 "red_text"     { return RED_TEXT; }
