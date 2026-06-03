@@ -2332,6 +2332,7 @@ std::string lp::StringNode::evaluateString() {
     }
 
     return procesada;
+}
 
 /**
  *
