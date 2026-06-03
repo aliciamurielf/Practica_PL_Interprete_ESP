@@ -70,61 +70,60 @@ extern int yydebug;
     DO = 271,                      /* DO  */
     END_WHILE = 272,               /* END_WHILE  */
     REPEAT = 273,                  /* REPEAT  */
-    UNTIL = 274,                   /* UNTIL  */
-    FOR = 275,                     /* FOR  */
-    FROM = 276,                    /* FROM  */
-    TO = 277,                      /* TO  */
-    STEP = 278,                    /* STEP  */
-    END_FOR = 279,                 /* END_FOR  */
-    SWITCH = 280,                  /* SWITCH  */
-    CASE = 281,                    /* CASE  */
-    DEFAULT = 282,                 /* DEFAULT  */
-    END_SWITCH = 283,              /* END_SWITCH  */
-    CONCATENATION = 284,           /* CONCATENATION  */
-    DO_WHILE = 285,                /* DO_WHILE  */
-    AND = 286,                     /* AND  */
-    OR = 287,                      /* OR  */
-    NOT = 288,                     /* NOT  */
-    CLEAR_SCREEN_CMD = 289,        /* CLEAR_SCREEN_CMD  */
-    PLACE_CMD = 290,               /* PLACE_CMD  */
-    INC = 291,                     /* INC  */
-    DEC = 292,                     /* DEC  */
-    FACT = 293,                    /* FACT  */
-    PLUS_ASSIGN = 294,             /* PLUS_ASSIGN  */
-    MINUS_ASSIGN = 295,            /* MINUS_ASSIGN  */
-    MULT_ASSIGN = 296,             /* MULT_ASSIGN  */
-    DIV_ASSIGN = 297,              /* DIV_ASSIGN  */
-    MOD_ASSIGN = 298,              /* MOD_ASSIGN  */
-    QUESTION = 299,                /* QUESTION  */
-    RED_TEXT = 300,                /* RED_TEXT  */
-    GREEN_TEXT = 301,              /* GREEN_TEXT  */
-    BLUE_TEXT = 302,               /* BLUE_TEXT  */
-    YELLOW_TEXT = 303,             /* YELLOW_TEXT  */
-    RESET_TEXT = 304,              /* RESET_TEXT  */
-    FACTORIAL_KW = 305,            /* FACTORIAL_KW  */
-    NUMBER = 306,                  /* NUMBER  */
-    BOOL = 307,                    /* BOOL  */
-    VARIABLE = 308,                /* VARIABLE  */
-    UNDEFINED = 309,               /* UNDEFINED  */
-    CONSTANT = 310,                /* CONSTANT  */
-    BUILTIN = 311,                 /* BUILTIN  */
-    STRING = 312,                  /* STRING  */
-    GREATER_OR_EQUAL = 313,        /* GREATER_OR_EQUAL  */
-    LESS_OR_EQUAL = 314,           /* LESS_OR_EQUAL  */
-    GREATER_THAN = 315,            /* GREATER_THAN  */
-    LESS_THAN = 316,               /* LESS_THAN  */
-    EQUAL = 317,                   /* EQUAL  */
-    NOT_EQUAL = 318,               /* NOT_EQUAL  */
-    PLUS = 319,                    /* PLUS  */
-    MINUS = 320,                   /* MINUS  */
-    MULTIPLICATION = 321,          /* MULTIPLICATION  */
-    DIVISION = 322,                /* DIVISION  */
-    MODULO = 323,                  /* MODULO  */
-    INTEGER_DIVISION = 324,        /* INTEGER_DIVISION  */
-    LPAREN = 325,                  /* LPAREN  */
-    RPAREN = 326,                  /* RPAREN  */
-    UNARY = 327,                   /* UNARY  */
-    POWER = 328                    /* POWER  */
+    FOR = 274,                     /* FOR  */
+    FROM = 275,                    /* FROM  */
+    TO = 276,                      /* TO  */
+    STEP = 277,                    /* STEP  */
+    END_FOR = 278,                 /* END_FOR  */
+    SWITCH = 279,                  /* SWITCH  */
+    CASE = 280,                    /* CASE  */
+    DEFAULT = 281,                 /* DEFAULT  */
+    END_SWITCH = 282,              /* END_SWITCH  */
+    CONCATENATION = 283,           /* CONCATENATION  */
+    DO_WHILE = 284,                /* DO_WHILE  */
+    AND = 285,                     /* AND  */
+    OR = 286,                      /* OR  */
+    NOT = 287,                     /* NOT  */
+    CLEAR_SCREEN_CMD = 288,        /* CLEAR_SCREEN_CMD  */
+    PLACE_CMD = 289,               /* PLACE_CMD  */
+    INC = 290,                     /* INC  */
+    DEC = 291,                     /* DEC  */
+    FACT = 292,                    /* FACT  */
+    PLUS_ASSIGN = 293,             /* PLUS_ASSIGN  */
+    MINUS_ASSIGN = 294,            /* MINUS_ASSIGN  */
+    MULT_ASSIGN = 295,             /* MULT_ASSIGN  */
+    DIV_ASSIGN = 296,              /* DIV_ASSIGN  */
+    MOD_ASSIGN = 297,              /* MOD_ASSIGN  */
+    QUESTION = 298,                /* QUESTION  */
+    RED_TEXT = 299,                /* RED_TEXT  */
+    GREEN_TEXT = 300,              /* GREEN_TEXT  */
+    BLUE_TEXT = 301,               /* BLUE_TEXT  */
+    YELLOW_TEXT = 302,             /* YELLOW_TEXT  */
+    RESET_TEXT = 303,              /* RESET_TEXT  */
+    FACTORIAL_KW = 304,            /* FACTORIAL_KW  */
+    NUMBER = 305,                  /* NUMBER  */
+    BOOL = 306,                    /* BOOL  */
+    VARIABLE = 307,                /* VARIABLE  */
+    UNDEFINED = 308,               /* UNDEFINED  */
+    CONSTANT = 309,                /* CONSTANT  */
+    BUILTIN = 310,                 /* BUILTIN  */
+    STRING = 311,                  /* STRING  */
+    GREATER_OR_EQUAL = 312,        /* GREATER_OR_EQUAL  */
+    LESS_OR_EQUAL = 313,           /* LESS_OR_EQUAL  */
+    GREATER_THAN = 314,            /* GREATER_THAN  */
+    LESS_THAN = 315,               /* LESS_THAN  */
+    EQUAL = 316,                   /* EQUAL  */
+    NOT_EQUAL = 317,               /* NOT_EQUAL  */
+    PLUS = 318,                    /* PLUS  */
+    MINUS = 319,                   /* MINUS  */
+    MULTIPLICATION = 320,          /* MULTIPLICATION  */
+    DIVISION = 321,                /* DIVISION  */
+    MODULO = 322,                  /* MODULO  */
+    INTEGER_DIVISION = 323,        /* INTEGER_DIVISION  */
+    LPAREN = 324,                  /* LPAREN  */
+    RPAREN = 325,                  /* RPAREN  */
+    UNARY = 326,                   /* UNARY  */
+    POWER = 327                    /* POWER  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
@@ -146,7 +145,7 @@ union YYSTYPE
   std::list<lp::CaseStmt *> *cases;  /* Lista de casos para el switch */
   lp::CaseStmt *casestmt;            /* Nodo de un caso individual */
 
-#line 150 "interpreter.tab.h"
+#line 149 "interpreter.tab.h"
 
 };
 typedef union YYSTYPE YYSTYPE;

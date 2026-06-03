@@ -178,7 +178,7 @@ extern lp::AST *root; //!< External root of the abstract syntax tree AST
 %token ASSIGNMENT
 
 /* Palabras reservadas */
-%token PRINT READ READ_STRING IF THEN ELSE END_IF WHILE DO END_WHILE REPEAT UNTIL FOR FROM TO STEP END_FOR SWITCH CASE DEFAULT END_SWITCH CONCATENATION DO_WHILE
+%token PRINT READ READ_STRING IF THEN ELSE END_IF WHILE DO END_WHILE REPEAT FOR FROM TO STEP END_FOR SWITCH CASE DEFAULT END_SWITCH CONCATENATION DO_WHILE
 
 /* Operadores lógicos */
 %token AND OR NOT
@@ -421,7 +421,7 @@ for: FOR controlSymbol VARIABLE FROM exp TO exp DO stmtlist END_FOR
           }
 ;
 
-repeat: REPEAT controlSymbol stmtlist UNTIL cond
+repeat: REPEAT controlSymbol stmtlist TO cond SEMICOLON
     {
         $$ = new lp::RepeatStmt($3, $5);
         control--;
@@ -471,9 +471,9 @@ asgn:   VARIABLE ASSIGNMENT exp
 		}
 ;
 
-print:  PRINT exp 
+print:  PRINT LPAREN exp RPAREN 
 		{
-			 $$ = new lp::PrintStmt($2);
+			 $$ = new lp::PrintStmt($3);
 		}
 ;	
 
