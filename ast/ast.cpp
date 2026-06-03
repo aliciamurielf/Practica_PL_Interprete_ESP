@@ -2300,12 +2300,14 @@ std::string lp::StringNode::evaluateString() {
     std::string procesada = this->_value;
     std::string::size_type pos = 0;
 
+    // Reemplazar \n (salto de línea)
     while ((pos = procesada.find("\\n", pos)) != std::string::npos) 
     {
         procesada.replace(pos, 2, "\n");
         pos += 1;
     }
 
+    // Reemplazar \t (tabulador)
     pos = 0;
     while ((pos = procesada.find("\\t", pos)) != std::string::npos) 
     {
@@ -2313,8 +2315,23 @@ std::string lp::StringNode::evaluateString() {
         pos += 1;
     }
 
+    // Reemplazar \' (comilla simple)
+    pos = 0;
+    while ((pos = procesada.find("\\'", pos)) != std::string::npos) 
+    {
+        procesada.replace(pos, 2, "'");
+        pos += 1;
+    }
+
+    // Reemplazar \\ (barra invertida)
+    pos = 0;
+    while ((pos = procesada.find("\\\\", pos)) != std::string::npos) 
+    {
+        procesada.replace(pos, 2, "\\");
+        pos += 1;
+    }
+
     return procesada;
-}
 
 /**
  *
