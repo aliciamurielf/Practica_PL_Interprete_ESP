@@ -1,13 +1,13 @@
-if (1  < 2) 
-  then print(1); 
-  else print(2); 
-  end_if;
+si (1 < 2) 
+  entonces escribir(1); 
+  si_no escribir(2); 
+  fin_si;
 
-print ('\n');
+escribir ('\n');
 
-if ('agua' < 'fuego') 
-  then print('agua'); 
-  else print('fuego'); 
- end_if;
+si ('agua' < 'fuego') 
+  entonces escribir('agua'); 
+  si_no escribir('fuego'); 
+ fin_si;
 
- print ('\n');
+ escribir ('\n');

@@ -3,23 +3,23 @@
   Se comprueba la conversión de tipo de una variable
 *)
 
-clear_screen;
+borrar_pantalla;
 
-place(3,10);
-print('Ejemplo de cambio del tipo de valor de una variable \n');
+lugar(3,10);
+escribir('Ejemplo de cambio del tipo de valor de una variable \n');
 
-print('Introduce un número --> ');
-read(dato);
+escribir('Introduce un número --> ');
+leer(dato);
 
-print('El número introducido es -> ');
-print(dato);
-print ('\n');
+escribir('El número introducido es -> ');
+escribir(dato);
+escribir ('\n');
 
-print('Introduce una cadena de caracteres --> ');
-read_string(dato);
+escribir('Introduce una cadena de caracteres --> ');
+leer_cadena(dato);
 
-print('La cadena introducida es -> ');
-print(dato);
+escribir('La cadena introducida es -> ');
+escribir(dato);
 
-place(24,10);
-print(' Fin del ejemplo de cambio del tipo de valor \n');
+lugar(24,10);
+escribir(' Fin del ejemplo de cambio del tipo de valor \n');

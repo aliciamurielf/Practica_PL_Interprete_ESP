@@ -1,115 +1,102 @@
 (*
-  Asignatura:    Procesadores de Lenguajes
-
-  Titulación:    Ingeniería Informática
-  Especialidad:  Computación
-  Curso:         Tercero
-  Cuatrimestre:  Segundo
-
-  Departamento:  Informática y Análisis Numérico
-  Centro:        Escuela Politécnica Superior de Córdoba
-  Universidad de Córdoba
- 
-  Curso académico: 2024 - 2025
-
   Fichero de ejemplo para interpreter.exe
 *)
 
 # Bienvenida
 
-clear_screen;
-place(10,10);
-print('Introduce tu nombre --> ');
-read_string(nombre);
+borrar_pantalla;
+lugar(10,10);
+escribir('Introduce tu nombre --> ');
+leer_cadena(nombre);
 
-clear_screen;
-place(5,10);
-print(' Bienvenido/a << ');
-print(nombre);
-print(' >> a \'interpreter.exe\'.');
+borrar_pantalla;
+lugar(5,10);
+escribir(' Bienvenido/a << ');
+escribir(nombre);
+escribir(' >> a \'interpreter.exe\'.');
 
-place(40,10);
-print('Pulsa una tecla para continuar');
-read_string(pausa);
+lugar(40,10);
+escribir('Pulsa una tecla para continuar');
+leer_cadena(pausa);
 
 
-repeat 
+repetir 
 
  # Opciones disponibles
 
- clear_screen;
- place(10,10);
- print(' Factorial de un número --> 1 ');
+ borrar_pantalla;
+ lugar(10,10);
+ escribir(' Factorial de un número --> 1 ');
 
- place(11,10);
- print(' Máximo común divisor ----> 2 ');
+ lugar(11,10);
+ escribir(' Máximo común divisor ----> 2 ');
 
- place(12,10);
- print(' Finalizar ---------------> 0 ');
+ lugar(12,10);
+ escribir(' Finalizar ---------------> 0 ');
 
- place(15,10);
- print(' Elige una opcion ');
+ lugar(15,10);
+ escribir(' Elige una opcion ');
 
- read(opcion);
+ leer(opcion);
 
- clear_screen;
+ borrar_pantalla;
 
  # Fin del programa
- if (opcion = 0)       		
-    then  
-        place(10,10);
-        print(nombre);
-        print(': gracias por usar el intérprete ');
- else 					
+ si (opcion = 0)       		
+    entonces  
+        lugar(10,10);
+        escribir(nombre);
+        escribir(': gracias por usar el intérprete ');
+ si_no 					
 	# Factorial de un número
-	if (opcion = 1)
-   	    then
-			place(10,10);
-			print(' Factorial de un numero  ');
+	si (opcion = 1)
+   	    entonces
+			lugar(10,10);
+			escribir(' Factorial de un numero  ');
 
-			place(11,10);
-			print(' Introduce un numero entero ');
-			read(N);
+			lugar(11,10);
+			escribir(' Introduce un numero entero ');
+			leer(N);
 
 			fact := 1;
 
-       		for i from 2 to N step 1 do
+       		para i desde 2 hasta N paso 1 hacer
 	            fact := fact * i;
-	        end_for;
+	        fin_para;
 
         	# Resultado
-			place(15,10);
-			print(' El factorial de ');
-			print(N);
-			place(16,10);
-			print(' es ');
-			print(fact);
+			lugar(15,10);
+			escribir(' El factorial de ');
+			escribir(N);
+			lugar(16,10);
+			escribir(' es ');
+			escribir(fact);
 
-	else 
+	si_no 
 	   	# Máximo común divisor
-		if (opcion = 2)
-			then
-				place(10,10);
-				print(' Máximo común divisor de dos números ');
+		si (opcion = 2)
+			entonces
+				lugar(10,10);
+				escribir(' Máximo común divisor de dos números ');
 
-				place(11,10);
-                print(' Algoritmo de Euclides ');
+				lugar(11,10);
+                escribir(' Algoritmo de Euclides ');
 
-                place(12,10);
-                print(' Escribe el primer número ');
-                read(a);
+                lugar(12,10);
+                escribir(' Escribe el primer número ');
+                leer(a);
 
-                place(13,10);
-                print(' Escribe el segundo número ');
-                read(b);
+                lugar(13,10);
+                escribir(' Escribe el segundo número ');
+                leer(b);
 
                 # Se ordenan los números
-				if (a < b)
-					then 
+				si (a < b)
+					entonces 
 						auxiliar := a;
 						a := b;
 						b := auxiliar;
-				end_if;
+				fin_si;
 
 				# Se guardan los valores originales
 					A1 := a;
@@ -118,36 +105,36 @@ repeat
 				# Se aplica el método de Euclides	
 				resto  := a mod b;
 
-				while (resto <> 0) do
+				mientras (resto <> 0) hacer
 					a :=  b;
 					b := resto;
 					resto := a mod b;
-				end_while;
+				fin_mientras;
          
 				# Se muestra el resultado
-				place(15,10);
-				print(' Máximo común divisor de ');
-				print(A1);
-				print(' y ');
-				print(B1);
-				print(' es ---> ');
-				print(b);
+				lugar(15,10);
+				escribir(' Máximo común divisor de ');
+				escribir(A1);
+				escribir(' y ');
+				escribir(B1);
+				escribir(' es ---> ');
+				escribir(b);
 
 		# Resto de opciones
- 		else  
-			place(15,10);
-		    print(' Opcion incorrecta ');
-		end_if;   
-  	end_if;                 
-  end_if;                          
+ 		si_no  
+			lugar(15,10);
+		    escribir(' Opcion incorrecta ');
+		fin_si;   
+  	fin_si;                 
+  fin_si;                          
 
- place(40,10); 
- print('\n Pulse una tecla para continuar --> ');
- read_string(pausa);
+ lugar(40,10); 
+ escribir('\n Pulse una tecla para continuar --> ');
+ leer_cadena(pausa);
  
-until (opcion = 0);             
+hasta (opcion = 0);             
 
 # Despedida final
-clear_screen;
-place(10,10);
-print('El programa ha concluido');
+borrar_pantalla;
+lugar(10,10);
+escribir('El programa ha concluido');

@@ -6,8 +6,7 @@
 /*!
  \mainpage Flex and Bison: a simple interpreter for a calculator language
  \author  Alicia Muriel Fernández
- \author  Lucía Cañero Moslero
- \date    2026-05-24
+ \date    2026-06-14
  \version 1.0
  \note Novelties
   + AST: intermidiate code  
@@ -89,6 +88,8 @@ lp::Table table; //!< Table of Symbols
 
 // cout.precision
 #include <iostream>
+#include <string>
+#include <fstream>
 //////////////////////////////////////////////////
 
 //! \name Main program
@@ -116,15 +117,30 @@ int main(int argc, char *argv[])
  */
  if (argc == 2) 
  {
-     yyin = fopen(argv[1],"r");
+    std::string filename = argv[1];  
+  
+    // 1. Validamos la extensión
+    if (filename.length() < 2 || filename.substr(filename.length() - 2) != ".p") {
+        std::cerr << "Error de ejecución: El fichero de entrada debe tener la extensión '.p'" << std::endl;
+        return 1; // Terminamos la ejecución con error
+    }
+    
+    // 2. Validamos que el archivo existe y se puede abrir
+    std::ifstream file(filename.c_str());
+    if (!file.good()) {
+        std::cerr << "Error de ejecución: El fichero '" << filename << "' no existe o no se puede abrir." << std::endl;
+        return 1;
+    }
+    file.close();
 
-	 interactiveMode = false;
+    // 3. ¡LA CLAVE! Asignamos el archivo a yyin para que Flex lo procese
+    yyin = fopen(filename.c_str(), "r");
+    interactiveMode = false;
  }
-else
+ else
  {
-	interactiveMode = true;
+    interactiveMode = true;
  }
-
  // Copy the name of the interpreter 
 	progname = argv[0];
 

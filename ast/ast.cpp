@@ -1668,16 +1668,16 @@ void lp::PrintStmt::evaluate()
 	int type = this->_exp->getType();
     
     if (type == NUMBER) {
-        std::cout << this->_exp->evaluateNumber() << std::endl;
+        std::cout << this->_exp->evaluateNumber();
     } 
     else if (type == STRING) {
-        std::cout << this->_exp->evaluateString() << std::endl;
+        std::cout << this->_exp->evaluateString();
     } 
     else if (type == BOOL) {
         if (this->_exp->evaluateBool())
-            std::cout << "true" << std::endl;
+            std::cout << "verdadero";
         else
-            std::cout << "false" << std::endl;
+            std::cout << "falso";
     }
     else {
         warning("Runtime error", "incompatible type for print");
